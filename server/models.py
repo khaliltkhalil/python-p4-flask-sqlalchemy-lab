@@ -17,7 +17,7 @@ class Zookeeper(db.Model):
     name = db.Column(db.String)
     birthday = db.Column(db.Date)
 
-    animals = db.Relationship("Animal", backref="zookeeper")
+    animals = db.relationship("Animal", backref="zookeeper")
 
     def __repr__(self):
         return f"{self.name}"
@@ -30,7 +30,7 @@ class Enclosure(db.Model):
     environment = db.Column(db.String)
     open_to_visitors = db.Column(db.Boolean)
 
-    animals = db.Relationship("Animal", backref="enclosure")
+    animals = db.relationship("Animal", backref="enclosure")
 
     def __repr__(self):
         return f"{self.environment}"
